@@ -1,3 +1,5 @@
+package mainAppObjects
+
 class Candidato {
     String nome
     String email

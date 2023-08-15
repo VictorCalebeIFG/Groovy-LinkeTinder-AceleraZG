@@ -1,3 +1,5 @@
+package mainAppObjects
+
 class Empresa {
     String nome
     String emailCorporativo

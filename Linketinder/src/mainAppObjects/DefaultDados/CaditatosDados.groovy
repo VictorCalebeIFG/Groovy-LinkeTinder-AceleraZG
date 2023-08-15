@@ -1,4 +1,6 @@
-import  Candidato
+package mainAppObjects.DefaultDados
+
+import  mainAppObjects.Candidato
 class CanditatosDados {
 
     def candidato1 = new Candidato(

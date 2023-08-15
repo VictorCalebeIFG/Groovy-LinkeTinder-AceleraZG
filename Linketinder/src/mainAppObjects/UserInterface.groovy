@@ -1,3 +1,7 @@
+package mainAppObjects
+
+import mainAppObjects.App
+
 class UserInterface {
 
     UserInterface(){

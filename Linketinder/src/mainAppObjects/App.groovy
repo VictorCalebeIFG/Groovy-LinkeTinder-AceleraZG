@@ -1,8 +1,8 @@
-import Candidato
-import Empresa
-import CanditatosDados
-import EmpresasDados
-import java.util.Scanner
+package mainAppObjects
+
+
+import mainAppObjects.DefaultDados.EmpresasDados
+import mainAppObjects.DefaultDados.CanditatosDados
 
 class App {
     List<Candidato> candidatos = []

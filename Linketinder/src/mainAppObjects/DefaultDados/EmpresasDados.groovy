@@ -1,4 +1,6 @@
-import Empresa
+package mainAppObjects.DefaultDados
+
+import mainAppObjects.Empresa
 class EmpresasDados {
 
     EmpresasDados(){}
@@ -9,7 +11,7 @@ class EmpresasDados {
             "Brasil",
             "São Paulo",
             "01234-567",
-            "Empresa de tecnologia com foco em inovação."
+            "mainAppObjects.Empresa de tecnologia com foco em inovação."
     )
 
     def empresa2 = new Empresa(
