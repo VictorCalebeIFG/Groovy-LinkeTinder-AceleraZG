@@ -2,6 +2,8 @@ import Candidato
 import Empresa
 import CanditatosDados
 import EmpresasDados
+import java.util.Scanner
+
 class App {
     List<Candidato> candidatos = []
     List<Empresa> empresas = []
@@ -17,11 +19,51 @@ class App {
         empresas.add(empresa)
     }
 
+    void pedirCandidato(){
+        String  nome        = this.pedirNomeString("o Nome")
+        String  email       = this.pedirNomeString("o email")
+        String  cpf         = this.pedirNomeString("o CPF")
+        int     idade       = this.pedirNomeInteiro("a Idade")
+        String  estado      = this.pedirNomeString("o Estado")
+        String  cep         = this.pedirNomeString("o CEP")
+        String  descricao   = this.pedirNomeString("a descricao")
+
+        def canditato = new Candidato(nome,email,cpf,idade,estado,cep,descricao)
+        this.adicionarCandidato(canditato)
+    }
+
+    void pedirEmpresa(){
+        String  nome        = this.pedirNomeString("o Nome")
+        String  email       = this.pedirNomeString("o email corporativo")
+        String  cnpj        = this.pedirNomeString("o cnpj")
+        String  pais        = this.pedirNomeString("o Pais")
+        String  estado      = this.pedirNomeString("o Estado")
+        String  cep         = this.pedirNomeString("o CEP")
+        String  descricao   = this.pedirNomeString("a Descricao")
+
+        def empresa = new Empresa(nome,email,cnpj,pais,estado,cep,descricao)
+        this.adicionarEmpresa(empresa)
+    }
+
     void mostrarCadidatos(){
         candidatos.each {it.mostrarDados()}
     }
     void mostrarEmpresas(){
         empresas.each {it.mostrarDados()}
+    }
+
+    String pedirNomeString(String dado){
+        def scanner = new Scanner(System.in)
+        println("Digite ${dado}")
+        String valorRecebido = scanner.nextLine()
+        return valorRecebido
+    }
+
+    int pedirNomeInteiro(String dado){
+        def scanner = new Scanner(System.in)
+        println("Digite ${dado}")
+        int valorRecebido = scanner.nextInt()
+        return valorRecebido
     }
 
     void iniciarDeafultData(){
