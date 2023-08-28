@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+
+body{
+    background-color: #1B1464;
+    
+}
+
+.choice-container{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12.5% auto;
+
+    border-radius: 20px;
+}
+
+.choice-container button{
+    height: 250px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 900;
+    font-size: medium;
+    transition: background-color 0.3s ease;
+}
+
+button.candidato{
+    background-color: #FC427B;
+    margin-right: 5px;
+    color: #EAB543;
+}
+
+.choice-container button:hover{
+    background-color: azure;
+    color: slateblue;
+}
+
+button.empresa{
+    background-color: #2C3A47;
+    margin-left: 5px;
+    color: #EAB543;
+}
