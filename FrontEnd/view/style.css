@@ -2,22 +2,21 @@
 
 body{
     background-color: #1B1464;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
 }
 
 .choice-container{
-    width: fit-content;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    align-items: center;
-    margin: 12.5% auto;
-
-    border-radius: 20px;
+    margin-bottom: 30px;
+    gap: 10px;
 }
 
-.choice-container button{
+
+body button{
+    margin: 0;
     height: 250px;
     width: 100px;
     border: none;
@@ -32,7 +31,6 @@ body{
 
 button.candidato{
     background-color: #FC427B;
-    margin-right: 5px;
     color: #EAB543;
 }
 
@@ -42,7 +40,6 @@ button.candidato{
 }
 
 button.empresa{
-    background-color: #2C3A47;
-    margin-left: 5px;
+    background-color: #FC427B;
     color: #EAB543;
 }

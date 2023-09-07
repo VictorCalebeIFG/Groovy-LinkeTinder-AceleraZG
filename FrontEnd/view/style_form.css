@@ -6,18 +6,23 @@ body {
     
     background-color: #35114f;
     font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
 }
 
 .container {
     background-color: #1B1464;
     color: #EAB543;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 400px;
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 5px;
+    padding: 10px;
     margin:10px auto;
+    border: solid 5px #EAB543;
 }
 
 .container >*{
