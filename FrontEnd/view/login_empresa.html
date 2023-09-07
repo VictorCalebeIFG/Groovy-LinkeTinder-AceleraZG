@@ -7,18 +7,20 @@
     <link rel="stylesheet" href="style_form.css">
     <title>Cadastro - Candidato</title>
 </head>
-<body>
+<body style="height: 100vh;">
     <div class="container form">
         <div class="container-title">
             <h3>Login Empresa <i class="fa-solid fa-user"></i></h3> 
         </div>
-        <label>CNPJ  <i class="fas fa-user"></i></label><input type="text" name="Nome" id="Nome">
-        <label>Senha <i class="fas fa-lock"></i></label><input type="password" name="Email" id="Email">
+        <label>CNPJ  <i class="fas fa-user"></i></label><input type="text" name="CNPJ" id="CNPJ">
+        <label>Senha <i class="fas fa-lock"></i></label><input type="password" name="Senha" id="Senha">
         <br>
-        <a href="empresa_lista.html"><button type="button">Enviar</button></a>
+        <button type="button" id="logar">Logar</button>
         
 
     </div>
+
+    <script type="module" src="../control/JavaScript/logarEmpresa.js"></script>
     
 </body>
 </html>

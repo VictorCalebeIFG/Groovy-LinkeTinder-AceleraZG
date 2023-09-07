@@ -7,22 +7,23 @@
     <link rel="stylesheet" href="style_form.css">
     <title>Cadastro - Candidato</title>
 </head>
-<body>
+<body >
     <div class="container form">
         <div class="container-title">
             <h3>Empresa <i class="fa-solid fa-building"></i></i></h3> 
         </div>
         <label>Nome  <i class="fas fa-user"></i></label><input type="text" name="Nome" id="Nome">
-        <label>Email Corporativo  <i class="fas fa-envelope"></i></label><input type="email" name="Email-corp" id="Email-corp">
+        <label>Email Corporativo  <i class="fas fa-envelope"></i></label><input type="email" name="Email-corp" id="Email">
         <label>CNPJ  <i class="fas fa-id-card"></i> </label><input type="text" name="CNPJ" id="CNPJ">
         <label>Pais  <i class="fas fa-map-marker-alt"></i></label><input type="text" name="Pais" id="Pais">
         <label>CEP  <i class="fas fa-map-marker-alt"></i></label><input type="text" name="CEP" id="CEP">
         <label>Senha <i class="fas fa-lock"></i></label><input type="password" name="Email" id="password">
         <label>Descrição da Empresa  <i class="fas fa-info-circle"></i></label><textarea name="descPessoal" id="descPessoal" cols="30" rows="10"></textarea>
         <br>
-        <a href="empresa_hub.html"><button type="button" onclick="adicionarEmpresa()">Cadastrar</button></a>
+        <button type="button" id="cadastrar">Cadastrar</button>
 
     </div>
-    <script src="../control/JavaScript/cadastraEmpresa.js"></script>
+    <script type="module" src="../control/JavaScript/GoogleSheetDataBase.js"></script>
+    <script type="module" src="../control/JavaScript/cadastraEmpresa.js"></script>
 </body>
 </html>

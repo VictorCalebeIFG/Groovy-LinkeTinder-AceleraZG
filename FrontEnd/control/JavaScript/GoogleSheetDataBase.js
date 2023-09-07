@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,16 +7,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.appendRow = void 0;
-const node_fetch_1 = __importDefault(require("node-fetch"));
-function appendRow(data, url, worksheet) {
+export function appendRow(data, url, worksheet) {
     return __awaiter(this, void 0, void 0, function* () {
         url = `${url}?action=append&data=${data.join(',')}&wkname=${worksheet}`;
-        const response = yield (0, node_fetch_1.default)(url);
+        const response = yield fetch(url);
     });
 }
-exports.appendRow = appendRow;
+export function getData(url, worksheet) {
+    url = `${url}?action=getdata&wkname=${worksheet}`;
+    const Httpreq = new XMLHttpRequest();
+    Httpreq.open("GET", url, false);
+    Httpreq.send(null);
+    const data = JSON.parse(Httpreq.responseText);
+    return data;
+}
