@@ -20,12 +20,14 @@ function adicionarEmpresa() :void{
     const cep       = document.getElementById("password")       as HTMLInputElement;
     const descricao = document.getElementById("descPessoal")    as HTMLInputElement;
 
-    appendRow([empresa.value, email.value, cnpj.value, pais.value, estado.value, cep.value, descricao.value], url, "company");
+    appendRow([empresa.value, email.value, `x${String(cnpj.value)}`, pais.value, estado.value, cep.value, descricao.value], url, "company");
     
-    const confirmacao = confirm("Empresa cadastrada com sucesso! Clique em OK para ir para a página de login.");
-
-    if (confirmacao) {
-        window.location.href = "../Login/login_empresa.html";
-    }
+    setTimeout(function() {
+      const confirmacao = confirm("Empresa cadastrada com sucesso! Clique em OK para ir para a página de login.");
+  
+      if (confirmacao) {
+          window.location.href = "../Login/login_empresa.html";
+      }
+     }, 1000);
 }
 

@@ -21,3 +21,9 @@ export function getData(url, worksheet) {
     const data = JSON.parse(Httpreq.responseText);
     return data;
 }
+export function findRowByCNPJ(cnpj, url, worksheet) {
+    const data = getData(url, worksheet);
+    console.log(data);
+    const foundElement = data.find((element) => element[2] === cnpj);
+    return foundElement;
+}

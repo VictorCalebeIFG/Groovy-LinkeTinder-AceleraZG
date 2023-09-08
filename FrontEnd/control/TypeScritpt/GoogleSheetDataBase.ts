@@ -13,3 +13,11 @@ export function getData(url: string, worksheet: string): any[] {
     const data = JSON.parse(Httpreq.responseText);
     return data;
 }
+
+export function findRowByCNPJ(cnpj: string, url: string, worksheet: string): any | undefined {
+    const data = getData(url, worksheet);
+    console.log(data);
+    const foundElement = data.find((element: any) => element[2] === cnpj);
+    
+    return foundElement; 
+}

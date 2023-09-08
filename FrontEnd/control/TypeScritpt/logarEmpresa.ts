@@ -20,11 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const data = getData(url, "company");
 
+    console.log(data);
+
     data.forEach((element: any) => {
       senha = element[5];
       cnpj = element[2];
       
-      if (CNPJ.value == cnpj && SENHA.value == senha) {
+      if ('x'+CNPJ.value == cnpj && SENHA.value == senha) {
         window.location.href = "../Hub/empresa_hub.html?username=" + cnpj ;
       }
     })

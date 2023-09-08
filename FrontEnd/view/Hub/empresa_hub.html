@@ -8,18 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
+    <div class="hello-user" id="hello-user">
+    </div>
+
     <div class="choice-container">
-        <a href="../Listas/candidato_lista.html"><button class="candidato">
+        <a href="../Listas/candidato_lista.html" id = "lista_candidato"><button class="candidato">
             Lista de Canditatos <p></p>
             <i class="fa-solid fa-user"></i>
         </button></a>
 
-        <a href=../Cadastro/cad_vaga.html id = "cad_vaga"><button class="candidato" style="background-color: rgb(195, 226, 43);">
+        <a href=../Cadastro/cad_vaga.html id = "cad_vaga"><button class="candidato" style="background-color: rgb(212, 110, 42) ;color: aliceblue;">
             Adicionar Vaga <p></p>
             <i class="fas fa-plus-square"></i>
         </button></a>
 
-        <a href="../Estatistica/candidatos_estatisticas.html"><button class="empresa">
+        <a href="../Estatistica/candidatos_estatisticas.html" id="estatisticas_candidato"><button class="empresa">
             Estatisticas <p></p>
             <i class="fas fa-bar-chart"></i>
         </button></a>
@@ -34,7 +38,11 @@
         console.log(username);
 
         document.getElementById("cad_vaga").href = "../Cadastro/cad_vaga.html?username=" + username;
+        document.getElementById("lista_candidato").href = "../Listas/candidato_lista.html?username=" + username;
+        document.getElementById("estatisticas_candidato").href = "../Estatistica/candidatos_estatisticas.html?username=" + username;
 
     </script>
+
+    <script type="module" src="../../control/JavaScript/empresaHub.js"></script>
 </body>
 </html>

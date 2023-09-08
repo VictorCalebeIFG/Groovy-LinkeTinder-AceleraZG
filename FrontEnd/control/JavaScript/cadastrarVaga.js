@@ -16,7 +16,7 @@ function cadastrarVaga() {
         appendRow([username, nomeVaga.value, skills.value, desc.value], url, "jobs");
     }
     setTimeout(function () {
-        const confirmacao = confirm("Vaga cadastrada com sucesso! Clique em OK para ir para a página de login.");
+        const confirmacao = confirm("Vaga cadastrada com sucesso! Clique em OK para ir para o hub da empresa.");
         if (confirmacao) {
             window.location.href = "../Hub/empresa_hub.html?username=" + username;
         }
