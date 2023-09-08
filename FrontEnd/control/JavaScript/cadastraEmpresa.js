@@ -17,6 +17,6 @@ function adicionarEmpresa() {
     appendRow([empresa.value, email.value, cnpj.value, pais.value, estado.value, cep.value, descricao.value], url, "company");
     const confirmacao = confirm("Empresa cadastrada com sucesso! Clique em OK para ir para a página de login.");
     if (confirmacao) {
-        window.location.href = "login_empresa.html";
+        window.location.href = "../Login/login_empresa.html";
     }
 }

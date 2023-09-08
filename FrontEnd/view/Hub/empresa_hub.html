@@ -4,27 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio da Aplicao</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Estilos/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="choice-container">
-        <a href="candidato_lista.html"><button class="candidato">
+        <a href="../Listas/candidato_lista.html"><button class="candidato">
             Lista de Canditatos <p></p>
             <i class="fa-solid fa-user"></i>
         </button></a>
 
-        <a href="candidato_lista.html"><button class="candidato" style="background-color: rgb(195, 226, 43);">
+        <a href=../Cadastro/cad_vaga.html id = "cad_vaga"><button class="candidato" style="background-color: rgb(195, 226, 43);">
             Adicionar Vaga <p></p>
             <i class="fas fa-plus-square"></i>
         </button></a>
 
-        <a href="candidatos_estatisticas.html"><button class="empresa">
+        <a href="../Estatistica/candidatos_estatisticas.html"><button class="empresa">
             Estatisticas <p></p>
             <i class="fas fa-bar-chart"></i>
         </button></a>
 
 
     </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+
+        console.log(username);
+
+        document.getElementById("cad_vaga").href = "../Cadastro/cad_vaga.html?username=" + username;
+
+    </script>
 </body>
 </html>
