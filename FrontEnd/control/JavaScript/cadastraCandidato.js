@@ -15,7 +15,8 @@ function cadastrarCandidato() {
     const cep = document.getElementById("CEP");
     const comp = document.getElementById("comp");
     const descricao = document.getElementById("descPessoal");
-    appendRow([nome.value, email.value, "x" + cpf.value, idade.value, estado.value, cep.value, String(comp.value).replace(",", "$"), descricao.value], url, "candidates");
+    const password = document.getElementById("password");
+    appendRow([nome.value, email.value, "x" + cpf.value, idade.value, estado.value, cep.value, String(comp.value).replace(",", "$"), descricao.value, password.value], url, "candidates");
     setTimeout(function () {
         const confirmacao = confirm("Candidato cadastrada com sucesso! Clique em OK para ir para a página de login.");
         if (confirmacao) {
