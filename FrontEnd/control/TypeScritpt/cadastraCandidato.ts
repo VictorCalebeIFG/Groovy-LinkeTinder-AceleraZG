@@ -12,15 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function cadastrarCandidato() :void{
   
-    const nome = document.getElementById("Nome") as HTMLInputElement;
-    const email = document.getElementById("Email") as HTMLInputElement;
-    const cpf = document.getElementById("CPF") as HTMLInputElement;
-    const idade = document.getElementById("Idade") as HTMLInputElement;
-    const estado = document.getElementById("Estado") as HTMLInputElement;
-    const cep = document.getElementById("CEP") as HTMLInputElement;
-    const comp = document.getElementById("comp") as HTMLInputElement;
+    const nome      = document.getElementById("Nome") as HTMLInputElement;
+    const email     = document.getElementById("Email") as HTMLInputElement;
+    const cpf       = document.getElementById("CPF") as HTMLInputElement;
+    const idade     = document.getElementById("Idade") as HTMLInputElement;
+    const estado    = document.getElementById("Estado") as HTMLInputElement;
+    const cep       = document.getElementById("CEP") as HTMLInputElement;
+    const comp      = document.getElementById("comp") as HTMLInputElement;
     const descricao = document.getElementById("descPessoal") as HTMLInputElement;
-    const password = document.getElementById("password") as HTMLInputElement;
+    const password  = document.getElementById("password") as HTMLInputElement;
 
     appendRow([nome.value, email.value, "x"+cpf.value, idade.value, estado.value, cep.value, String(comp.value).replace(",","$"), descricao.value, password.value], url, "candidates");
     

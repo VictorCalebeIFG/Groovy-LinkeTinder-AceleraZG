@@ -24,13 +24,17 @@ body{
 .user-info{
     display: flex;
     color: azure;
-    column-gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 .user-desc{
     background-color: #0652DD;
     text-align: justify;
     padding: 5px 20px 0px 20px;
     width: 100%;
+    font-weight: 900;
+    color: aliceblue;
 }
 .info-title{
     font-weight: 900;
@@ -43,7 +47,7 @@ body{
     width: 120px;
 }
 .div-name{
-    width: 100px;
+    width: fit-content;
 }
 .div-email{
     width: 200px;
