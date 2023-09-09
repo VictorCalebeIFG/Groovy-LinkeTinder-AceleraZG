@@ -2,7 +2,7 @@ import { getData } from "./GoogleSheetDataBase.js";
 const url = "https://script.google.com/macros/s/AKfycbwvNd0cLSh10QPaoVD9KIfqwzeAOjXWHo9Egk8DcbDrwTZE_nCLhbvca-AJ3KiBB9Rz/exec";
 function logarEmpresa() {
     const datanotfound = true;
-    const data = getData(url, "company");
+    const data = getData(url, "jobs");
     const listaDiv = document.getElementById("lista");
     data.forEach((element) => {
         const listContent = document.createElement("div");
@@ -12,7 +12,7 @@ function logarEmpresa() {
     <div class="user-info">
 
         <div class="image-container">
-        <img src="https://robohash.org/${element[0]}" alt="Avatar">
+        <img src="https://robohash.org/${element[2]}" alt="Avatar">
         </div>
         
         <div class="div-name">

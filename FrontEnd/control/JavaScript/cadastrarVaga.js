@@ -13,7 +13,7 @@ function cadastrarVaga() {
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get('username');
     if (username) {
-        appendRow([username, nomeVaga.value, skills.value, desc.value], url, "jobs");
+        appendRow([username, nomeVaga.value, String(skills.value).replace(",", "$"), desc.value], url, "jobs");
     }
     setTimeout(function () {
         const confirmacao = confirm("Vaga cadastrada com sucesso! Clique em OK para ir para o hub da empresa.");

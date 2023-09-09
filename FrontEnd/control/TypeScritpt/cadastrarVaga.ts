@@ -20,7 +20,7 @@ function cadastrarVaga() :void{
     const username = urlParams.get('username');
 
     if(username){
-      appendRow([username,nomeVaga.value, skills.value, desc.value], url, "jobs");
+      appendRow([username,nomeVaga.value,  String(skills.value).replace(",","$"), desc.value], url, "jobs");
     }
     
     setTimeout(function() {

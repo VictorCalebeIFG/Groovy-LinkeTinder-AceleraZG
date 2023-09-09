@@ -5,7 +5,7 @@ const url = "https://script.google.com/macros/s/AKfycbwvNd0cLSh10QPaoVD9KIfqwzeA
 function logarEmpresa(): void {
     const datanotfound = true;
 
-    const data = getData(url, "company");
+    const data = getData(url, "jobs");
 
     const listaDiv = document.getElementById("lista") as HTMLDivElement;
 
@@ -19,7 +19,7 @@ function logarEmpresa(): void {
     <div class="user-info">
 
         <div class="image-container">
-        <img src="https://robohash.org/${element[0]}" alt="Avatar">
+        <img src="https://robohash.org/${element[2]}" alt="Avatar">
         </div>
         
         <div class="div-name">

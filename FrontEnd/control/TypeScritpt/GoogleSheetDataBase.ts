@@ -21,3 +21,10 @@ export function findRowByCNPJ(cnpj: string, url: string, worksheet: string): any
     
     return foundElement; 
 }
+
+export function findRowByCNPJnoRequest(cnpj: string, data: any[]): any | undefined {
+    console.log(data);
+    const foundElement = data.find((element: any) => element[2] === cnpj);
+    
+    return foundElement; 
+}
