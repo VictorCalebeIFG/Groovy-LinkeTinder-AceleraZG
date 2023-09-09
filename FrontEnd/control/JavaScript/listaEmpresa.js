@@ -2,7 +2,7 @@ import { getData } from "./GoogleSheetDataBase.js";
 const url = "https://script.google.com/macros/s/AKfycbwvNd0cLSh10QPaoVD9KIfqwzeAOjXWHo9Egk8DcbDrwTZE_nCLhbvca-AJ3KiBB9Rz/exec";
 function logarEmpresa() {
     const datanotfound = true;
-    const data = getData(url, "jobs");
+    const data = getData(url, "company");
     const listaDiv = document.getElementById("lista");
     data.forEach((element) => {
         const listContent = document.createElement("div");

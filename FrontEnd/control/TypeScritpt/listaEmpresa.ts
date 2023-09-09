@@ -5,7 +5,7 @@ const url = "https://script.google.com/macros/s/AKfycbwvNd0cLSh10QPaoVD9KIfqwzeA
 function logarEmpresa(): void {
     const datanotfound = true;
 
-    const data = getData(url, "jobs");
+    const data = getData(url, "company");
 
     const listaDiv = document.getElementById("lista") as HTMLDivElement;
 
