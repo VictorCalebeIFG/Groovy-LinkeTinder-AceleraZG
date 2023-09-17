@@ -1,63 +1,35 @@
 import { getData } from "./GoogleSheetDataBase.js";
-const url = "https://script.google.com/macros/s/AKfycbwvNd0cLSh10QPaoVD9KIfqwzeAOjXWHo9Egk8DcbDrwTZE_nCLhbvca-AJ3KiBB9Rz/exec";
-function logarEmpresa() {
-    const datanotfound = true;
-    const data = getData(url, "candidates");
-    const listaDiv = document.getElementById("lista");
-    data.forEach((element) => {
-        const listContent = document.createElement("div");
-        listContent.className = 'candidato';
-        listContent.innerHTML = `
-    
-    <div class="user-info">
-
-        <div class="image-container">
-        <img src="https://robohash.org/${element[2]}" alt="Avatar">
-        </div>
-        
-        <div class="div-name">
-            <label class="info-title">Nome:</label><br>
-            <label>${element[0]}</label><br>
-        </div>
-        
-        <div class="div-email">
-            <label class="info-title">Email:</label><br>
-            <label>${element[1]}</label>
-        </div>
-        
-        <div>
-            <label class="info-title">CPF:</label><br>
-            <label>${element[2]}</label>
-        </div>
-
-        <div>
-            <label class="info-title">Idade:</label><br>
-            <label>${element[3]}</label>
-        </div>
-        
-
-        <div>
-            <label class="info-title">Estado:</label><br>
-            <label>${element[4]}</label>
-        </div>
-
-        <div>
-            <label class="info-title">CEP:</label><br>
-            <label>${element[5]}</label>
-        </div>
-
-        <div>
-            <label class="info-title">Skills:</label><br>
-            <label>${String(element[6]).replace("$", ",")}</label>
-        </div>
-
-    </div>
-
-    <div class="user-desc">
-        <label class="info-title">Descrição:</label>
-        <p>${element[7]}</p>
-    </div>`;
-        listaDiv.appendChild(listContent);
-    });
+import { appendRow } from "./GoogleSheetDataBase.js";
+export const url = "https://script.google.com/macros/s/AKfycbwvNd0cLSh10QPaoVD9KIfqwzeAOjXWHo9Egk8DcbDrwTZE_nCLhbvca-AJ3KiBB9Rz/exec";
+const globalCandidatosData = getData(url, "candidates");
+const urlParams = new URLSearchParams(window.location.search);
+const user = urlParams.get('username');
+var vagaPos = 0;
+const likebutton = document.getElementById('like');
+const closeButton = document.getElementById('close');
+if (likebutton && closeButton) {
+    likebutton.addEventListener('click', proximaVaga);
+    closeButton.addEventListener('click', ignoreVaga);
 }
-logarEmpresa();
+function ignoreVaga() {
+    vagaPos += 1;
+    if (vagaPos >= globalCandidatosData.length) {
+        vagaPos = 0;
+    }
+    loadHtmlNextJob();
+}
+function proximaVaga() {
+    vagaPos += 1;
+    appendRow([globalCandidatosData[vagaPos][2], user], url, "EmpresaLike");
+    if (vagaPos >= globalCandidatosData.length) {
+        vagaPos = 0;
+    }
+    loadHtmlNextJob();
+}
+function loadHtmlNextJob() {
+    const skills = document.getElementById("skills");
+    const desc = document.getElementById("descricao");
+    skills.innerHTML = globalCandidatosData[vagaPos][6].replace("$", ",");
+    desc.innerHTML = globalCandidatosData[vagaPos][7];
+}
+loadHtmlNextJob();

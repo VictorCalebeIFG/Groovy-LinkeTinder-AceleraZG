@@ -20,7 +20,7 @@ function cadastrarVaga() :void{
     const username = urlParams.get('username');
 
     if(username){
-      appendRow([username,nomeVaga.value,  String(skills.value).replace(",","$"), desc.value], url, "jobs");
+      appendRow([username,nomeVaga.value,  String(skills.value).replace(",","$"), desc.value,generateRandomValue()], url, "jobs");
     }
     
     setTimeout(function() {
@@ -32,3 +32,12 @@ function cadastrarVaga() :void{
      }, 1000);
 }
 
+function generateRandomValue(): string {
+  const min = 0;
+  const max = 9999999999; // 10 dígitos
+  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  const randomNumberStr = randomNumber.toString();
+  const zeroPadding = '0'.repeat(10 - randomNumberStr.length); // Adiciona zeros à esquerda
+  const formattedValue = `x${zeroPadding}${randomNumberStr}`;
+  return formattedValue;
+}

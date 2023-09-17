@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       if ('x'+CNPJ.value == cnpj && SENHA.value == senha) {
         window.location.href = "../Hub/candidato_hub.html?username=" + cnpj ;
+        console.log("Logou")
       }
     })
 

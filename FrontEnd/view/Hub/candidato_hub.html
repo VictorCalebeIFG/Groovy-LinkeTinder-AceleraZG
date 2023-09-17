@@ -14,14 +14,18 @@
 
     <div class="choice-container">
         
-        <a href="../Listas/candidato_lista.html" id = "lista_candidato"><button class="candidato">
+        <a href="" id = "lista_candidato"><button class="candidato">
             Lista de Empresas <p></p>
             <i class="fa-solid fa-user"></i>
         </button></a>
 
-        <a href="../Estatistica/candidatos_estatisticas.html" id="estatisticas_candidato"><button class="empresa">
+        <a href="" id="estatisticas_candidato"><button class="empresa">
             Lista de Vagas <p></p>
             <i class="fas fa-bar-chart"></i>
+        </button></a>
+
+        <a href="" id="Matchs"><button class="empresa">
+            Matchs <br>🥵<p></p>
         </button></a>
 
     </div>
@@ -34,6 +38,7 @@
 
         document.getElementById("lista_candidato").href = "../Listas/empresa_lista.html?username=" + username;
         document.getElementById("estatisticas_candidato").href = "../Listas/vaga_lista.html?username=" + username;
+        document.getElementById("Matchs").href = "../Listas/candidatoMatch.html?username=" + username;
 
     </script>
 

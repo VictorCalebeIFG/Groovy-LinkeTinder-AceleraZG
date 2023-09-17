@@ -19,6 +19,7 @@ function logarEmpresa() {
         cnpj = element[2];
         if ('x' + CNPJ.value == cnpj && SENHA.value == senha) {
             window.location.href = "../Hub/candidato_hub.html?username=" + cnpj;
+            console.log("Logou");
         }
     });
     console.log(cnpj, senha);

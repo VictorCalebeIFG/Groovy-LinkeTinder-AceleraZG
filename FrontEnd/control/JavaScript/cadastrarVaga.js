@@ -13,7 +13,7 @@ function cadastrarVaga() {
     const urlParams = new URLSearchParams(window.location.search);
     const username = urlParams.get('username');
     if (username) {
-        appendRow([username, nomeVaga.value, String(skills.value).replace(",", "$"), desc.value], url, "jobs");
+        appendRow([username, nomeVaga.value, String(skills.value).replace(",", "$"), desc.value, generateRandomValue()], url, "jobs");
     }
     setTimeout(function () {
         const confirmacao = confirm("Vaga cadastrada com sucesso! Clique em OK para ir para o hub da empresa.");
@@ -21,4 +21,13 @@ function cadastrarVaga() {
             window.location.href = "../Hub/empresa_hub.html?username=" + username;
         }
     }, 1000);
+}
+function generateRandomValue() {
+    const min = 0;
+    const max = 9999999999; // 10 dígitos
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    const randomNumberStr = randomNumber.toString();
+    const zeroPadding = '0'.repeat(10 - randomNumberStr.length); // Adiciona zeros à esquerda
+    const formattedValue = `x${zeroPadding}${randomNumberStr}`;
+    return formattedValue;
 }

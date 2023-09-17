@@ -9,20 +9,108 @@
 </head>
 <body>
 
-    <div class="barra-pesquisa">
-        <label >Pesquisar Candidato</label>
-        <input type="text" name="pesquisa" id="pesquisa">
-        <button type="button"><i class="fas fa-search search-icon"></i></button>
-    </div>
-
     <div class="lista container" id="lista">
-    
 
+            <div class="vagaCard" id="vagaCard">
+                <div class="cardInfo" id="cardInfo">
+
+                    <h1 id="nomeVaga">Candidato Anônimo</h1>
+
+                    <h4 id="skills">Skills</h6>
+
+                    <p id="descricao">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa inventore eius recusandae blanditiis, illo repellat exercitationem ab voluptate reiciendis facere quod asperiores repellendus tempore velit deleniti quia corrupti unde debitis.</p>
+                    
+
+                </div>
+
+                <div class="cardButtons">
+                    <button id="like" style="background-color: rgb(201, 95, 95); color: aliceblue; box-shadow: 0px 0px 10px 0px rgba(215, 122, 122, 0.8);"><i class="fa-solid fa-heart fa-beat"></i></button>
+                    <button id = "close" style="background-color: black; color: aliceblue;box-shadow: 0px 0px 10px 0px rgba(96, 64, 64, 0.8);"><i class="fa-solid fa-circle-xmark fa-beat"></i></button>
+                </div>
+
+            </div>
+     
 
     </div>
-    
-    <script type="module" src="../../control/JavaScript/GoogleSheetDataBase.js"></script>
-    <script type="module" src="../../control/JavaScript/listaCandito.js"></script>
 
+
+    <style>
+
+        .lista.container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #c974c4, #6c589e);
+            padding: 20px;
+            margin: 10vh auto;
+            width: 25vw;
+            height: 65vh;
+            border-radius: 10px;
+        }
+
+        .cardButtons{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            padding: 0px 40px 0px 40px;
+        }
+
+        .cardButtons button{
+            font-size: 30px;
+            padding: 10px;
+            text-align: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .vagaCard{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cardInfo{
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.8);
+            width: 90%;
+        }
+
+
+        .cardInfo p{
+            text-align: justify;
+            height: 150px;
+            overflow-y: auto;
+            padding-right: 10px;
+
+        }
+
+        body {
+            --dot-bg: black;
+            --dot-color: white;
+            --dot-size: 1px;
+            --dot-space: 22px;
+            background:
+                linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+                linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+                var(--dot-color);
+}
+
+    </style>
+
+    <script type="module" src="../../control/JavaScript/GoogleSheetDataBase.js"></script>
+    <script type="module" src="../../control/JavaScript/listaCandito.js"></script> 
+    
+    
 </body>
 </html>

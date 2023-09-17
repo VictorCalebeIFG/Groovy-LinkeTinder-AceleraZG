@@ -1,53 +1,38 @@
 import { getData } from "./GoogleSheetDataBase.js";
-import { findRowByCNPJnoRequest } from "./GoogleSheetDataBase.js";
+import { appendRow } from "./GoogleSheetDataBase.js";
 export const url = "https://script.google.com/macros/s/AKfycbwvNd0cLSh10QPaoVD9KIfqwzeAOjXWHo9Egk8DcbDrwTZE_nCLhbvca-AJ3KiBB9Rz/exec";
-export function logarEmpresa() {
-    // const datanotfound = true; // This variable is not used
-    const jobData = getData(url, "jobs");
-    const empresaData = getData(url, "company");
-    const listaDiv = document.getElementById("lista");
-    jobData.forEach((element) => {
-        const listContent = document.createElement("div");
-        listContent.className = 'candidato';
-        const empresa = findRowByCNPJnoRequest(element[0], empresaData);
-        console.log(empresa);
-        listContent.innerHTML = `
-    
-        <div class="user-info">
-    
-            <div class="image-container">
-            <img src="https://robohash.org/${element[0]}" alt="Avatar">
-            </div>
-            
-            <div class="div-name">
-                <label class="info-title">Empresa:</label><br>
-                <label>${empresa[0]}</label><br>
-            </div>
-            
-            <div class="div-email">
-                <label class="info-title">Email:</label><br>
-                <label>${empresa[1]}</label>
-            </div>
-            
-            <div>
-                <label class="info-title">Cargo:</label><br>
-                <label>${element[1]}</label>
-            </div>
-    
-            <div>
-                <label class="info-title">Skills:</label><br>
-                <label>${String(element[2]).replace("$", ",")}</label>
-            </div>
-            
-
-    
-        </div>
-    
-        <div class="user-desc">
-            <label class="info-title">Descrição da Vaga:</label>
-            <p>${element[3]}</p>
-        </div>`;
-        listaDiv.appendChild(listContent);
-    });
+const globalJobData = getData(url, "jobs");
+const globalEmpresaData = getData(url, "company");
+const urlParams = new URLSearchParams(window.location.search);
+const user = urlParams.get('username');
+var vagaPos = 0;
+const likebutton = document.getElementById('like');
+const closeButton = document.getElementById('close');
+if (likebutton && closeButton) {
+    likebutton.addEventListener('click', proximaVaga);
+    closeButton.addEventListener('click', ignoreVaga);
 }
-logarEmpresa();
+function ignoreVaga() {
+    vagaPos += 1;
+    if (vagaPos >= globalJobData.length) {
+        vagaPos = 0;
+    }
+    loadHtmlNextJob();
+}
+function proximaVaga() {
+    vagaPos += 1;
+    appendRow([user, globalJobData[vagaPos][0], globalJobData[vagaPos][4]], url, "CandidatoLike");
+    if (vagaPos >= globalJobData.length) {
+        vagaPos = 0;
+    }
+    loadHtmlNextJob();
+}
+function loadHtmlNextJob() {
+    const nomeVaga = document.getElementById("nomeVaga");
+    const skills = document.getElementById("skills");
+    const desc = document.getElementById("descricao");
+    nomeVaga.innerHTML = globalJobData[vagaPos][1];
+    skills.innerHTML = globalJobData[vagaPos][2].replace("$", ",");
+    desc.innerHTML = globalJobData[vagaPos][3];
+}
+loadHtmlNextJob();
