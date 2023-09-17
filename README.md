@@ -1,5 +1,10 @@
 # Groovy-LinkeTinder-AceleraZG
 
+[Link no Trello](https://trello.com/b/bvsAxaEG/linketinder)
+
+
+[Link do GoogleSheets](https://docs.google.com/spreadsheets/d/1GkHN5wSEZgmY-ZBkXTdNZV9Sle0mTweC4Cvh6Kv4pyY/edit#gid=0)
+
 ### Explicação:
 
 **Classes**:
