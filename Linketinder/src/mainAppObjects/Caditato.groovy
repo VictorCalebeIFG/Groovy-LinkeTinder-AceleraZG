@@ -2,28 +2,29 @@ package mainAppObjects
 
 class Candidato {
     String nome
+    String sobreNome
+    Date dataNascimento
     String email
     String cpf
-    int idade
-    String estado
+    String pais
     String cep
-    String descricaoPessoal
+    String descPessoal
+    String senha
 
-    Candidato(String nome,String email,String cpf, int idade, String estado, String cep,String descricaoPessoal) {
+    Candidato(String nome, String sobreNome, Date dataNascimento, String email, String cpf, String pais, String cep, String descPessoal, String senha) {
         this.nome = nome
+        this.sobreNome = sobreNome
+        this.dataNascimento = dataNascimento
         this.email = email
         this.cpf = cpf
-        this.idade = idade
-        this.estado = estado
+        this.pais = pais
         this.cep = cep
-        this.descricaoPessoal = descricaoPessoal
+        this.descPessoal = descPessoal
+        this.senha = senha
     }
 
-    void mostrarDados(){
-        println("Nome:${this.nome} |")
-        println("Email: ${this.email} | CPF:${this.cpf} | idade: ${this.idade}")
-        println("Estado:${this.estado} | Cep: ${this.cep}")
-        println("Descrição: ${this.descricaoPessoal}")
-        println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-")
+    @Override
+    String toString() {
+        return "Candidato(nome: ${nome}, sobreNome: ${sobreNome}, dataNascimento: ${dataNascimento}, email: ${email}, cpf: ${cpf}, pais: ${pais}, cep: ${cep}, descPessoal: ${descPessoal}, senha: ${senha})"
     }
 }

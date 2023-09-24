@@ -2,28 +2,25 @@ package mainAppObjects
 
 class Empresa {
     String nome
-    String emailCorporativo
     String cnpj
+    String email
+    String descricao
     String pais
-    String estado
     String cep
-    String descricaoEmpresa
+    String senha
 
-    Empresa(String nome, String emailCorporativo, String cnpj, String pais, String estado, String cep, String descricaoEmpresa) {
-        this.nome               = nome
-        this.emailCorporativo   = emailCorporativo
-        this.cnpj               = cnpj
-        this.pais               = pais
-        this.estado             = estado
-        this.cep                = cep
-        this.descricaoEmpresa   = descricaoEmpresa
+    Empresa(String nome, String cnpj, String email, String descricao, String pais, String cep, String senha) {
+        this.nome = nome
+        this.cnpj = cnpj
+        this.email = email
+        this.descricao = descricao
+        this.pais = pais
+        this.cep = cep
+        this.senha = senha
     }
 
-    void mostrarDados(){
-        println("Nome:${this.nome} |")
-        println("Email: ${this.emailCorporativo} | CNPJ:${this.cnpj} | País: ${this.pais}")
-        println("Estado:${this.estado} | Cep: ${this.cep}")
-        println("Descrição: ${this.descricaoEmpresa}")
-        println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-")
+    @Override
+    String toString() {
+        return "Empresa [Nome: ${nome}, CNPJ: ${cnpj}, Email: ${email}, Descrição: ${descricao}, País: ${pais}, CEP: ${cep}]"
     }
 }

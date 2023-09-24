@@ -31,6 +31,7 @@
       <root url="jar://$PROJECT_DIR$/lib/groovy-swing-4.0.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/groovy-typecheckers-4.0.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/groovy-xml-4.0.2.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -63,6 +64,9 @@
       <root url="jar://$PROJECT_DIR$/lib/groovy-toml-4.0.2-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/groovy-typecheckers-4.0.2-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/groovy-xml-4.0.2-sources.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib" />
     </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" type="SOURCES" />
   </library>
 </component>
