@@ -25,3 +25,11 @@ Basta rodar o arquivo Main e seguir as instruções dadas no terminal.
 - Ver canditos.
 - Adicionar empresas.
 - Adicionar Candidatos.
+
+
+---
+# Banco de Dados
+
+**Modelo Entidade Relacionamento:**
+
+![Linketinder_diagrama_entindade_relacionamento](https://github.com/VictorCalebeIFG/Groovy-LinkeTinder-AceleraZG/assets/84258178/3b6b510b-a84e-43e9-a235-50e745050559)
