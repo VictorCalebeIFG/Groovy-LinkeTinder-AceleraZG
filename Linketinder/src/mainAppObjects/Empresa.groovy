@@ -19,6 +19,10 @@ class Empresa {
         this.senha = senha
     }
 
+    List<String> toList() {
+        return [nome, cnpj, email, descricao, pais, cep, senha]
+    }
+
     @Override
     String toString() {
         return "Empresa [Nome: ${nome}, CNPJ: ${cnpj}, Email: ${email}, Descrição: ${descricao}, País: ${pais}, CEP: ${cep}]"

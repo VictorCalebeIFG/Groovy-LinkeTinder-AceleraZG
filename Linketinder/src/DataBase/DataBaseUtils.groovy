@@ -5,39 +5,36 @@ package DataBase
 
 import groovy.sql.Sql
 
+import java.sql.Types
+import java.text.SimpleDateFormat
+
 class DataBaseUtils {
-    String url = "jdbc:postgresql://localhost:5432/linketinder"
-    String user = "postgres"
-    String password = "V@caburra02"
+    static String url = "jdbc:postgresql://localhost:5432/linketinder"
+    static String user = "postgres"
+    static String password = "V@caburra02"
 
-    Sql sql = Sql.newInstance(url, user, password, "org.postgresql.Driver")
+    static Sql sql = Sql.newInstance(url, user, password, "org.postgresql.Driver")
 
-    List<Map<String, String>> getCandidatos(){
+    static  List<String> getCandidatos(){
         // Consulta para selecionar todos os campos da tabela CANDIDATO
         def query = "SELECT * FROM CANDIDATO"
 
         def result = sql.rows(query)
         def candidatos = []
 
+
         result.each { row ->
-            candidatos << [
-                    ID: row.ID,
-                    NOME: row.NOME,
-                    SOBRE_NOME: row.SOBRE_NOME,
-                    DATA_NASCIMENTO: row.DATA_NASCIMENTO,
-                    EMAIL: row.EMAIL,
-                    CPF: row.CPF,
-                    PAIS: row.PAIS,
-                    CEP: row.CEP,
-                    DESC_PESSOAL: row.DESC_PESSOAL,
-                    SENHA: row.SENHA
-            ]
+            def auxList = []
+            for(column in 0..row.size() -1){
+                auxList.add(row[column])
+            }
+            candidatos.add(auxList)
         }
 
         return candidatos
     }
 
-    List<Map<String, String>> getEmpresas(){
+    static List<Map<String, String>> getEmpresas(){
         // Consulta para selecionar todos os campos da tabela EMPRESA
         def query = "SELECT * FROM EMPRESA"
 
@@ -45,18 +42,86 @@ class DataBaseUtils {
         def empresas = []
 
         result.each { row ->
-            empresas << [
-                    ID: row.ID,
-                    NOME: row.NOME,
-                    CNPJ: row.CNPJ,
-                    EMAIL: row.EMAIL,
-                    DESCRICAO: row.DESCRICAO,
-                    PAIS: row.PAIS,
-                    CEP: row.CEP,
-                    SENHA: row.SENHA
-            ]
+            def auxList = []
+            for(column in 0..row.size() -1){
+                auxList.add(row[column])
+            }
+            empresas.add(auxList)
         }
 
         return empresas
     }
+
+    static List<Map<String, String>> getCompetencia(){
+        // Consulta para selecionar todos os campos da tabela EMPRESA
+        def query = "SELECT * FROM COMPETENCIA"
+
+        def result = sql.rows(query)
+        def competencias = []
+
+        result.each { row ->
+            def auxList = []
+            for(column in 0..row.size() -1){
+                auxList.add(row[column])
+            }
+            competencias.add(auxList)
+        }
+
+        return competencias
+    }
+
+    static void addEmpresa(List<String> empresaData) {
+        def query = """
+            INSERT INTO EMPRESA (NOME, CNPJ, EMAIL, DESCRICAO, PAIS, CEP, SENHA)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        """
+
+        sql.executeInsert(query, empresaData)
+    }
+
+    static void addCandidato(List<String> candidatoData) {
+        def query = """
+        INSERT INTO CANDIDATO (NOME, SOBRE_NOME, DATA_NASCIMENTO, EMAIL, CPF, PAIS, CEP, DESC_PESSOAL, SENHA)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """
+
+        sql.execute(query, candidatoData)
+    }
+
+    static void addCompetenciaCandidato(List<String> candidatoData){
+        def query = """
+        INSERT INTO COMPETENCIA_CANDIDATO (ID_CANDIDATO,ID_COMPETENCIA)
+        VALUES (?, ?)
+        """
+
+        sql.execute(query, candidatoData)
+    }
+
+    static void addCompetenciaVaga(List<String> vagaData){
+        def query = """
+        INSERT INTO COMPETENCIA_VAGA (ID_VAGA,ID_COMPETENCIA)
+        VALUES (?, ?)
+        """
+
+        sql.execute(query, vagaData)
+    }
+
+    static void addVaga(List<String> vagaData){
+        def query = """
+        INSERT INTO VAGA (NOME, DESCRICAO, LOCAL)
+        VALUES (?, ?, ?)
+        """
+
+        sql.execute(query, vagaData)
+    }
+
+    static void addVagaEmpresa(List<String> vagaData){
+        def query = """
+        INSERT INTO EMPRESA_VAGA (ID_VAGA, ID_EMPREASA)
+        VALUES (?, ?)
+        """
+
+        sql.execute(query, vagaData)
+    }
+
 }

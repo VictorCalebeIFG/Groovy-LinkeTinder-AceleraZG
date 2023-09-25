@@ -17,6 +17,9 @@ class UserInterface {
             println "2. Mostrar candidatos"
             println "3. Adicionar candidatos"
             println "4. Adicionar Empresas"
+            println "5. Adicionar Competencia-Candidato"
+            println "6. Adicionar Vaga"
+            println "7. Adicionar Competencia-Vaga"
             println "10. Fechar o programa"
 
             try {
@@ -39,6 +42,15 @@ class UserInterface {
                     break
                 case 4:
                     linkeTinder.pedirEmpresa()
+                    break
+                case 5:
+                    linkeTinder.pedirCompetencias()
+                    break
+                case 6:
+                    linkeTinder.pedirVaga()
+                    break
+                case 7:
+                    linkeTinder.pedirCompetenciasVaga()
                     break
                 case 10:
                     println "Fechando o programa..."

@@ -1,5 +1,6 @@
 package mainAppObjects
 
+import DataBase.DataBaseUtils
 import mainAppObjects.Candidato
 import mainAppObjects.Empresa
 import java.text.SimpleDateFormat
@@ -18,7 +19,6 @@ class TerminalUtilites {
         def sobreNome = scanner.nextLine()
         print("Data de Nascimento (no formato yyyy-MM-dd): ")
         def dataNascimentoStr = scanner.nextLine()
-        def dataNascimento = new SimpleDateFormat("yyyy-MM-dd").parse(dataNascimentoStr)
         print("Email: ")
         def email = scanner.nextLine()
         print("CPF: ")
@@ -34,7 +34,7 @@ class TerminalUtilites {
 
         scanner.close()
 
-        Candidato candidato = new Candidato(nome, sobreNome, dataNascimento, email, cpf, pais, cep, descPessoal, senha)
+        Candidato candidato = new Candidato(nome, sobreNome, dataNascimentoStr, email, cpf, pais, cep, descPessoal, senha)
 
         return candidato
     }
@@ -66,6 +66,65 @@ class TerminalUtilites {
         return empresa
     }
 
+    static void adicionarCompetencia(){
+        Scanner scanner = new Scanner(System.in)
+
+        println("Digite o ID do Candidato")
+        def idCandidato = scanner.nextLine()
+
+        println("Digite o ID Competencia")
+        println(DataBaseUtils.getCompetencia())
+        def idCompetencia = scanner.nextLine()
+
+        DataBaseUtils.addCompetenciaCandidato([idCandidato as Integer, idCompetencia as Integer])
+
+
+    }
+
+    static void adicionarCompetenciaVaga(){
+        Scanner scanner = new Scanner(System.in)
+
+        println("Digite o ID da Vaga")
+        def idVaga = scanner.nextLine()
+
+        println("Digite o ID da Competencia")
+        println(DataBaseUtils.getCompetencia())
+        def idCompetencia = scanner.nextLine()
+
+        DataBaseUtils.addCompetenciaVaga([idVaga as Integer, idCompetencia as Integer])
+
+
+    }
+
+    static List<String> pedirVaga() {
+        Scanner scanner = new Scanner(System.in)
+
+        println("Informe o nome da vaga:")
+        String nome = scanner.nextLine()
+
+        println("Informe a descrição da vaga:")
+        String descricao = scanner.nextLine()
+
+        println("Informe o local da vaga:")
+        String local = scanner.nextLine()
+
+        println("Informe o ID da empresa da vaga:")
+        Integer idEmpresa = Integer.parseInt(scanner.nextLine())
+
+        println("Informe o ID da vaga:")
+        Integer idVaga = Integer.parseInt(scanner.nextLine())
+
+
+
+        scanner.close()
+
+        List<String> vagaData = [nome,descricao,local]
+
+        DataBaseUtils.addVaga(vagaData)
+        DataBaseUtils.addVagaEmpresa([idVaga,idEmpresa])
+
+        return vagaData
+    }
 
 
 

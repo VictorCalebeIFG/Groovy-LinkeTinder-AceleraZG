@@ -3,7 +3,7 @@ package mainAppObjects
 class Candidato {
     String nome
     String sobreNome
-    Date dataNascimento
+    String dataNascimento
     String email
     String cpf
     String pais
@@ -11,7 +11,7 @@ class Candidato {
     String descPessoal
     String senha
 
-    Candidato(String nome, String sobreNome, Date dataNascimento, String email, String cpf, String pais, String cep, String descPessoal, String senha) {
+    Candidato(String nome, String sobreNome, String dataNascimento, String email, String cpf, String pais, String cep, String descPessoal, String senha) {
         this.nome = nome
         this.sobreNome = sobreNome
         this.dataNascimento = dataNascimento
@@ -22,6 +22,11 @@ class Candidato {
         this.descPessoal = descPessoal
         this.senha = senha
     }
+
+    List<Object> toList() {
+        return [nome,sobreNome,dataNascimento,email,cpf,pais,cep,descPessoal,senha]
+    }
+
 
     @Override
     String toString() {
