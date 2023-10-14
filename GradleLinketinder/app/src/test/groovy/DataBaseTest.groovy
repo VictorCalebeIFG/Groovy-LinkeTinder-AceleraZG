@@ -4,7 +4,7 @@ import DataBase.DataBaseUtils
 import spock.lang.Specification
 
 class DataBaseTest extends Specification {
-    def "application has a greeting"() {
+    def "database is working"() {
         setup:
         def candidatos = DataBaseUtils.getCandidatos()
 
