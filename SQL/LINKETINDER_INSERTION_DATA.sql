@@ -31,3 +31,16 @@ INSERT INTO COMPETENCIA (TAG) VALUES
     ('PHP'),
     ('Swift'),
     ('Flutter');
+
+INSERT INTO VAGA(
+	EMPRESA_ID,
+	NOME,
+	DESCRICAO,
+	LOCAL
+)
+VALUES(
+	(SELECT ID FROM EMPRESA WHERE EMAIL = 'empresa1@email.com'),
+	'nome da vaga da empresa 1',
+	'descricao da vaga da empresa 1',
+	'local da empresa 1'
+);
