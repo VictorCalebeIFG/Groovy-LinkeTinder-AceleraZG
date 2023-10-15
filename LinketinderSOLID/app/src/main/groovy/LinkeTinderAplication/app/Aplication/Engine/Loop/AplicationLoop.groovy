@@ -1,6 +1,6 @@
 package LinkeTinderAplication.app.Aplication.Engine.Loop
 
-import LinkeTinderAplication.app.Aplication.Engine.OptionsHandler.SwitchCase
+import LinkeTinderAplication.app.Aplication.Engine.Control.OptionsHandler.SwitchCase
 import LinkeTinderAplication.app.Aplication.Engine.UserQuestions.AskCommands
 
 class AplicationLoop {

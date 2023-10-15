@@ -1,8 +1,8 @@
-package LinkeTinderAplication.app.Aplication.Engine.OptionsHandler
+package LinkeTinderAplication.app.Aplication.Engine.Control.OptionsHandler
 
 import LinkeTinderAplication.app.Aplication.Engine.UserQuestions.InputHandler.UserInput
 import LinkeTinderAplication.app.Aplication.Engine.UserQuestions.AskCommands
-import LinkeTinderAplication.app.Aplication.Engine.ShowData.ShowData
+import LinkeTinderAplication.app.Aplication.Engine.Control.ShowData.ShowData
 import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Candidate.InsertInto.InsertIntoCandidate
 import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Candidate.LinkTables.LinkCandidateToSkillsUsingEmail
 import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Company.InsertInto.InsertIntoCompany
