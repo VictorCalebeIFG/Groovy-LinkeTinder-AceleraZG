@@ -11,7 +11,7 @@ class SelectJobsUsingEmail extends SelectFromWhereDataBase{
      */
 
     SelectJobsUsingEmail(){
-        this.query = """
+        query = """
         Select * from vaga
         where empresa_id = (select id from empresa where email = ?);
         """

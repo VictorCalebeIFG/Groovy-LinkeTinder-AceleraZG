@@ -3,11 +3,12 @@
  */
 package LinkeTinderAplication.app.Aplication
 
-import java.util.Scanner
+import LinkeTinderAplication.app.Aplication.Engine.Loop.AplicationLoop
 
 class App {
     static void main(String[] args) {
-        (new TerminalUserInput()).runLoop()
+
+        (new AplicationLoop()).runLoop()
 
     }
 }

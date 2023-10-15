@@ -1,8 +1,9 @@
-package LinkeTinderAplication.app.Aplication
+package LinkeTinderAplication.app.Aplication.Engine.Loop
 
-import LinkeTinderAplication.app.Aplication.Utils.UserQuestions.AskCommands
+import LinkeTinderAplication.app.Aplication.Engine.OptionsHandler.SwitchCase
+import LinkeTinderAplication.app.Aplication.Engine.UserQuestions.AskCommands
 
-class TerminalUserInput {
+class AplicationLoop {
     Scanner scanner = new Scanner(System.in)
     SwitchCase switchcase = new SwitchCase()
     AskCommands askcommands = new  AskCommands()
@@ -11,13 +12,9 @@ class TerminalUserInput {
         String command = "-"
 
         while (command != ""){
-
-            askcommands.askCommand()
-
+            askcommands.showCommands()
             command = scanner.nextLine()
-
             switchcase.runSwitchCase(command)
-
         }
     }
 

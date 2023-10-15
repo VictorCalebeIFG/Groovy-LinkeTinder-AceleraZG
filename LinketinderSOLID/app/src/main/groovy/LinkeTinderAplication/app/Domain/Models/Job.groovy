@@ -1,8 +1,8 @@
 package LinkeTinderAplication.app.Domain.Models
 
 class Job {
-    private String nome, description
-    private List<String> skills
+    private String          nome, description
+    private List<String>    skills
 
     Job(String nome, String description, List<String> skills) {
         this.nome = nome

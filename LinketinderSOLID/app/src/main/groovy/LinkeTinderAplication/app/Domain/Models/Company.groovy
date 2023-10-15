@@ -2,9 +2,9 @@ package LinkeTinderAplication.app.Domain.Models
 
 class Company {
 
-    private String name, cnpj, email, description
-    private String country, cep, password
-    private List<Job> jobs
+    private String      name, cnpj, email, description
+    private String      country, cep, password
+    private List<Job>   jobs
 
     Company(String name, String cnpj, String email, String description, String country, String cep, String password, List jobs) {
         this.name = name

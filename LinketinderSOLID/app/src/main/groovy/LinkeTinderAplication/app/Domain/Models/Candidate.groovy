@@ -2,10 +2,10 @@ package LinkeTinderAplication.app.Domain.Models
 
 class Candidate {
 
-    private String name, lastName, birthDate
-    private String email, cpf, country
-    private String cep, description , password
-    private List skills
+    private String          name, lastName, birthDate
+    private String          email, cpf, country
+    private String          cep, description , password
+    private List<String>    skills
 
     Candidate(String name, String lastName, String birthDate, String email, String cpf, String country, String cep, String description, String password, List skills) {
         this.name = name

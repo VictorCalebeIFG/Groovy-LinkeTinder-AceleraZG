@@ -14,7 +14,7 @@ class LinkJobToSkills extends InsertIntoDataBase{
     LinkJobToSkills(){
         query = """
         INSERT INTO COMPETENCIA_VAGA (ID_VAGA,ID_COMPETENCIA)
-        VALUES (?, ?)
+        VALUES (CAST(? AS INTEGER), CAST(? AS INTEGER))
         """
     }
 

@@ -23,7 +23,7 @@ class InsertIntoJobUsingEmail extends InsertIntoDataBase{
             (SELECT ID FROM EMPRESA WHERE EMAIL = ?),
             ?,
             ?,
-            ?'
+            ?
         )
         """
     }

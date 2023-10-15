@@ -5,7 +5,7 @@ import LinkeTinderAplication.app.Infrastructure.DataBase.SuperClasses.DeleteFrom
 class DeleteCandidateUsingEmail extends DeleteFromDataBase{
 
     DeleteCandidateUsingEmail(){
-        this.query = """
+        query = """
             Delete From Candidato Where email = ? 
         """
     }

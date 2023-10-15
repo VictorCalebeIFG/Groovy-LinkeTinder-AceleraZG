@@ -16,7 +16,7 @@ class LinkCandidateToSkillsUsingEmail extends InsertIntoDataBase{
         insert into competencia_candidato (id_candidato,id_competencia)
         values (
 	        (select id from candidato where email=?),
-	        ?
+	        CAST(? AS INTEGER)
         );
         '''
     }
