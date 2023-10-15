@@ -10,7 +10,7 @@ class Job {
         this.skills = skills
     }
 
-    List<String> toList(){
+    public List<String> toList(){
         return [nome,description,skills]
     }
 }

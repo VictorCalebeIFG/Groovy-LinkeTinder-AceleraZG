@@ -27,7 +27,6 @@ class Candidate {
         return [name,lastName,birthDate,email,cpf,country,cep,description,password,skills]
     }
 
-
     String getName() {
         return name
     }

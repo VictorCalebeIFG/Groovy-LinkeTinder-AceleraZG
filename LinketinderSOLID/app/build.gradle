@@ -29,7 +29,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'LinkeTinderAplication.app.App'
+    mainClass = 'LinkeTinderAplication.app.Aplication.App'
 }
 
 tasks.named('test') {
