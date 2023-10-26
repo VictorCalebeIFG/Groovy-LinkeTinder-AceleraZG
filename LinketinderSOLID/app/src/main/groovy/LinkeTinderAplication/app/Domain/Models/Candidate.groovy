@@ -23,7 +23,7 @@ class Candidate {
     Candidate(){
     }
 
-    List toList(){
+    List<String> toList(){
         return [name,lastName,birthDate,email,cpf,country,cep,description,password,skills]
     }
 

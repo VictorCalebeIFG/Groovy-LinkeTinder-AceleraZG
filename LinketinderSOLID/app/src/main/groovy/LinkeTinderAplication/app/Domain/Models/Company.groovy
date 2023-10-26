@@ -20,7 +20,7 @@ class Company {
     Company(){
     }
 
-    List toList(){
+    List<String> toList(){
         return [this.name, this.cnpj, this.email , this.description, this.country, this.cep, this.password, this.jobs]
     }
 

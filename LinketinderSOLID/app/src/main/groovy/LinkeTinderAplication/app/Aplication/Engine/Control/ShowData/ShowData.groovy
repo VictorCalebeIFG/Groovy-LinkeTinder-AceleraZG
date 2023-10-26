@@ -1,21 +1,22 @@
 package LinkeTinderAplication.app.Aplication.Engine.Control.ShowData
 
-import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Candidate.SelectFrom.SelectFromCandidate
-import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Company.SelectFrom.SelectFromCompany
-import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Job.SelectFrom.SelectJobsUsingEmail
+import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Candidate.DBCandidateImplementation.DBCandidateImplementation
+import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Company.DBCompanyImplementation.DBCompanyImplementation
+import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Job.DBCompanyImplementation.DBJobImplementation
+
 
 class ShowData {
 
     public showCandidates(){
-        (new SelectFromCandidate()).getData().forEach {println it}
+        new DBCandidateImplementation().Select().forEach {println it}
     }
 
     public showCompanys(){
-        (new SelectFromCompany().getData().forEach {println it})
+        new DBCompanyImplementation().Select().forEach {println it}
     }
 
     public showCompanyJobs(String email){
-        new SelectJobsUsingEmail().getDataUsingEmail(email).forEach {println it}
+        new DBJobImplementation().SelectUsingEmail(email).forEach {println it}
     }
 
 }
