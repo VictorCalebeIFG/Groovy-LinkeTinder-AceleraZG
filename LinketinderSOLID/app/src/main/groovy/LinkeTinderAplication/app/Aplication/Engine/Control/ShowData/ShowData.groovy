@@ -1,22 +1,22 @@
 package LinkeTinderAplication.app.Aplication.Engine.Control.ShowData
 
-import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Candidate.DBCandidateImplementation.DBCandidateImplementation
-import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Company.DBCompanyImplementation.DBCompanyImplementation
-import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Job.DBCompanyImplementation.DBJobImplementation
+import LinkeTinderAplication.app.DAO.Candidate.CandidateDAO
+import LinkeTinderAplication.app.DAO.Company.CompanyDAO
+import LinkeTinderAplication.app.DAO.Job.JobDAO
 
 
 class ShowData {
 
     public showCandidates(){
-        new DBCandidateImplementation().Select().forEach {println it}
+        new CandidateDAO().Select().forEach {println it}
     }
 
     public showCompanys(){
-        new DBCompanyImplementation().Select().forEach {println it}
+        new CompanyDAO().Select().forEach {println it}
     }
 
     public showCompanyJobs(String email){
-        new DBJobImplementation().SelectUsingEmail(email).forEach {println it}
+        new JobDAO().SelectUsingEmail(email).forEach {println it}
     }
 
 }

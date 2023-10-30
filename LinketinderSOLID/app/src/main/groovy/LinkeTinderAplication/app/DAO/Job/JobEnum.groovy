@@ -1,6 +1,6 @@
-package LinkeTinderAplication.app.Infrastructure.DataBase.Models.Job.EnumQuerys
+package LinkeTinderAplication.app.DAO.Job
 
-enum DBJobEnum {
+enum JobEnum {
     INSERT_USING_EMAIL("""
         INSERT INTO VAGA(EMPRESA_ID,NOME,DESCRICAO,LOCAL)
         VALUES( (SELECT ID FROM EMPRESA WHERE EMAIL = (?) ) ,(?),(?),(?) )
@@ -17,7 +17,7 @@ enum DBJobEnum {
 
     final String query
 
-    DBJobEnum(String query){
+    JobEnum(String query){
         this.query = query
     }
 

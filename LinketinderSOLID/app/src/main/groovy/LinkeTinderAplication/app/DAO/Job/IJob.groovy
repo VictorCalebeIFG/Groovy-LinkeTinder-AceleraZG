@@ -1,8 +1,8 @@
-package LinkeTinderAplication.app.Infrastructure.DataBase.Models.Job.DBCompanyInterface
+package LinkeTinderAplication.app.DAO.Job
 
 import LinkeTinderAplication.app.Domain.Models.Job
 
-interface DBJobInterface {
+interface IJob {
     void InsertUsingEmail(List<String> jobData)
     void InsertUsingEmail(Job job)
     void LinkToSkillUsingEmail(String email, String skillID)

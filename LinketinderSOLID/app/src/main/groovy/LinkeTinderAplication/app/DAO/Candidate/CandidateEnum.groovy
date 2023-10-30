@@ -1,6 +1,6 @@
-package LinkeTinderAplication.app.Infrastructure.DataBase.Models.Candidate.EnumQuerys
+package LinkeTinderAplication.app.DAO.Candidate
 
-enum DBCandidateEnum {
+enum CandidateEnum {
 
     DELETE_USING_EMAIL("""
     Delete From Candidato Where email = ? 
@@ -25,7 +25,7 @@ enum DBCandidateEnum {
 
     final String query
 
-    DBCandidateEnum(String query){
+    CandidateEnum(String query){
         this.query = query
     }
 

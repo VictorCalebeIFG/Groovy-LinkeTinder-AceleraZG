@@ -1,12 +1,12 @@
-package LinkeTinderAplication.app.Infrastructure.DataBase.SQLFactory.Intances
+package LinkeTinderAplication.app.DataBase.SQLFactory
 
-import LinkeTinderAplication.app.Infrastructure.DataBase.DataBaseInitSingleton.PostgresDataBase
+import LinkeTinderAplication.app.DataBase.SingletonDataBase
 import groovy.sql.GroovyRowResult
 import groovy.sql.Sql
 
-class SQL {
+class SQLInstance {
 
-    Sql postgres = PostgresDataBase.getInstance().getPostgres()
+    Sql postgres = SingletonDataBase.getInstance().getPostgres()
 
     public void Run(String query,List<String> args){
         postgres.execute(query,args)

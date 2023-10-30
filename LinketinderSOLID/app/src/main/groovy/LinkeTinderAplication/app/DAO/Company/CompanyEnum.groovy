@@ -1,6 +1,6 @@
-package LinkeTinderAplication.app.Infrastructure.DataBase.Models.Company.EnumQuerys
+package LinkeTinderAplication.app.DAO.Company
 
-enum DBCompanyEnum {
+enum CompanyEnum {
 
     DELETE_USING_EMAIL(" DELETE FROM EMPRESA WHERE EMAIL = ? "),
 
@@ -14,7 +14,7 @@ enum DBCompanyEnum {
 
     final String query
 
-    DBCompanyEnum(String query){
+    CompanyEnum(String query){
         this.query = query
     }
 

@@ -1,8 +1,8 @@
-package LinkeTinderAplication.app.Infrastructure.DataBase.Models.Candidate.DBCandidateInterface
+package LinkeTinderAplication.app.DAO.Candidate
 
 import LinkeTinderAplication.app.Domain.Models.Candidate
 
-interface DBCandidateInterface {
+interface ICandidate {
 
     void DeleteUsingEmail(String email)
     void Insert(List<String> candidateData)

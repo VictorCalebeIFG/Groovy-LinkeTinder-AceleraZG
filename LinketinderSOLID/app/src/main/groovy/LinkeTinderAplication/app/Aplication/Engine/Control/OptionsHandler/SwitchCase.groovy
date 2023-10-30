@@ -3,9 +3,9 @@ package LinkeTinderAplication.app.Aplication.Engine.Control.OptionsHandler
 import LinkeTinderAplication.app.Aplication.Engine.UserQuestions.InputHandler.UserInput
 import LinkeTinderAplication.app.Aplication.Engine.UserQuestions.AskCommands
 import LinkeTinderAplication.app.Aplication.Engine.Control.ShowData.ShowData
-import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Candidate.DBCandidateImplementation.DBCandidateImplementation
-import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Company.DBCompanyImplementation.DBCompanyImplementation
-import LinkeTinderAplication.app.Infrastructure.DataBase.Models.Job.DBCompanyImplementation.DBJobImplementation
+import LinkeTinderAplication.app.DAO.Candidate.CandidateDAO
+import LinkeTinderAplication.app.DAO.Company.CompanyDAO
+import LinkeTinderAplication.app.DAO.Job.JobDAO
 
 class SwitchCase {
 
@@ -26,23 +26,23 @@ class SwitchCase {
                 break
 
             case "3":
-                new DBCandidateImplementation().Insert(userInput.askUserInput(command))
+                new CandidateDAO().Insert(userInput.askUserInput(command))
                 break
 
             case "4":
-                new DBCompanyImplementation().Insert(userInput.askUserInput(command))
+                new CompanyDAO().Insert(userInput.askUserInput(command))
                 break
 
             case "5":
-                new DBJobImplementation().InsertUsingEmail(userInput.askUserInput(command))
+                new JobDAO().InsertUsingEmail(userInput.askUserInput(command))
                 break
 
             case "6":
-                new DBCandidateImplementation().LinkToSkillUsingEmail(userInput.askUserInput(command))
+                new CandidateDAO().LinkToSkillUsingEmail(userInput.askUserInput(command))
                 break
 
             case "7":
-                new DBJobImplementation().LinkToSkillUsingEmail(userInput.askUserInput(command))
+                new JobDAO().LinkToSkillUsingEmail(userInput.askUserInput(command))
                 break
 
             default:

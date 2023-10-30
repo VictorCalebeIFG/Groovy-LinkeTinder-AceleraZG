@@ -1,8 +1,8 @@
-package LinkeTinderAplication.app.Infrastructure.DataBase.Models.Company.DBCompanyInterface
+package LinkeTinderAplication.app.DAO.Company
 
 import LinkeTinderAplication.app.Domain.Models.Company
 
-interface DBCompanyInterface {
+interface ICompany {
     void DeleteUsingEmail(String email)
     void Insert(List<String> companyData)
     void Insert(Company company)

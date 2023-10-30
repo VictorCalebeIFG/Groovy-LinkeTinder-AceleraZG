@@ -1,21 +1,21 @@
-package LinkeTinderAplication.app.Infrastructure.DataBase.DataBaseInitSingleton
+package LinkeTinderAplication.app.DataBase
 
 @GrabConfig(systemClassLoader=true)
 @Grab(group='org.postgresql', module='postgresql', version='42.6.0')
 
 import groovy.sql.Sql
 
-class PostgresDataBase {
-    private static PostgresDataBase instance
+class SingletonDataBase {
+    private static SingletonDataBase instance
     private final Sql postgres
 
-    private PostgresDataBase() {
+    private SingletonDataBase() {
         this.postgres = initDataBase()
     }
 
-    static PostgresDataBase getInstance() {
+    static SingletonDataBase getInstance() {
         if (instance == null) {
-            instance = new PostgresDataBase()
+            instance = new SingletonDataBase()
         }
         return instance
     }
