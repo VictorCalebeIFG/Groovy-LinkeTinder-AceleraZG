@@ -14,9 +14,11 @@ De forma geral, as alterações ,em sua maioria, foram em relação granularidad
 
 ### Aplicação de Padrões de projeto:
 
-Foi aplicado o singleton no banco de dados, de forma que não fosse necessário iniciar o banco a cada requisição. Dessa forma, todas as instâncias do DAO utilizam a mesma instância de banco de dados.
+Foi aplicado o **singleton** no banco de dados, de forma que não fosse necessário iniciar o banco a cada requisição. Dessa forma, todas as instâncias do DAO utilizam a mesma instância de banco de dados.
 
-Além disso, para cria a instância que executa os comandos SQL foi utilizado o padrão Abstract Factory, que permite criar instâncias SQL de forma mais isolada.
+Além disso, para cria a instância que executa os comandos SQL foi utilizado o padrão **Abstract Factory**, que permite criar instâncias SQL de forma mais isolada.
+
+Outro padrão utilizado no banco de Dados foi o **Data Acces Object (DAO)**, que permitiu isolar as funcionalidades relacionadas a obtenção e gravação de dados.
 
 ---
 # Banco de Dados
