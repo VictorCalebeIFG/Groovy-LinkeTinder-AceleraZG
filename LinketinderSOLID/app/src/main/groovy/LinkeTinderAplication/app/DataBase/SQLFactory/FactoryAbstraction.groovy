@@ -1,5 +1,7 @@
 package LinkeTinderAplication.app.DataBase.SQLFactory
 
-abstract class Factory {
+import LinkeTinderAplication.app.DataBase.SQLInstance
+
+abstract class FactoryAbstraction {
     public abstract SQLInstance createSQLInstance();
 }

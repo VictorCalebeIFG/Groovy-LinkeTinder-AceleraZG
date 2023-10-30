@@ -1,7 +1,7 @@
 package LinkeTinderAplication.app.DAO.Job
 
 import LinkeTinderAplication.app.DataBase.SQLFactory.SQLInstanceCreator
-import LinkeTinderAplication.app.DataBase.SQLFactory.SQLInstance
+import LinkeTinderAplication.app.DataBase.SQLInstance
 import LinkeTinderAplication.app.Domain.Models.Job
 
 class JobDAO implements IJob{

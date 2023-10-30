@@ -1,4 +1,4 @@
-package LinkeTinderAplication.app.DataBase.SQLFactory
+package LinkeTinderAplication.app.DataBase
 
 import LinkeTinderAplication.app.DataBase.SingletonDataBase
 import groovy.sql.GroovyRowResult

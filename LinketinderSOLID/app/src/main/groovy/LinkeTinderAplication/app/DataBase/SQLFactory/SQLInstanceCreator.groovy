@@ -1,6 +1,8 @@
 package LinkeTinderAplication.app.DataBase.SQLFactory
 
-class SQLInstanceCreator extends Factory{
+import LinkeTinderAplication.app.DataBase.SQLInstance
+
+class SQLInstanceCreator extends FactoryAbstraction{
 
     @Override
     SQLInstance createSQLInstance() {

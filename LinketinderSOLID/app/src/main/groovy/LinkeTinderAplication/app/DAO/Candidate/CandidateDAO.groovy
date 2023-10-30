@@ -1,7 +1,7 @@
 package LinkeTinderAplication.app.DAO.Candidate
 
 import LinkeTinderAplication.app.DataBase.SQLFactory.SQLInstanceCreator
-import LinkeTinderAplication.app.DataBase.SQLFactory.SQLInstance
+import LinkeTinderAplication.app.DataBase.SQLInstance
 import LinkeTinderAplication.app.Domain.Models.Candidate
 
 class CandidateDAO implements ICandidate{
