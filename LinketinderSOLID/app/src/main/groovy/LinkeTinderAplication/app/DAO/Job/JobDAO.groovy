@@ -2,7 +2,7 @@ package LinkeTinderAplication.app.DAO.Job
 
 import LinkeTinderAplication.app.DataBase.SQLFactory.SQLInstanceCreator
 import LinkeTinderAplication.app.DataBase.SQLInstance
-import LinkeTinderAplication.app.Domain.Models.Job
+import LinkeTinderAplication.app.Model.Job
 
 class JobDAO implements IJob{
 
@@ -14,10 +14,14 @@ class JobDAO implements IJob{
     }
 
     @Override
-    void InsertUsingEmail(Job job) {
+    void InsertUsingEmail(String email,Job job) {
         List<String> jobData = job.toList()
+        List data = [email]
+
+        println(jobData)
         jobData.removeAt(jobData.size() - 1)
-        sql.Run(JobEnum.INSERT_USING_EMAIL.getQuery(), jobData)
+        jobData.forEach {data.add(it)}
+        sql.Run(JobEnum.INSERT_USING_EMAIL.getQuery(),data)
     }
 
     @Override

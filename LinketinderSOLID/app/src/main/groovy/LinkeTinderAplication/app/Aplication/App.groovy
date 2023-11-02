@@ -3,8 +3,6 @@
  */
 package LinkeTinderAplication.app.Aplication
 
-import LinkeTinderAplication.app.Aplication.Engine.Loop.AplicationLoop
-
 class App {
     static void main(String[] args) {
 

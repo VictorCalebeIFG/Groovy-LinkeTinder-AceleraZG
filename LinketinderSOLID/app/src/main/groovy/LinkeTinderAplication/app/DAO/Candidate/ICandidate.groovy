@@ -1,6 +1,6 @@
 package LinkeTinderAplication.app.DAO.Candidate
 
-import LinkeTinderAplication.app.Domain.Models.Candidate
+import LinkeTinderAplication.app.Model.Candidate
 
 interface ICandidate {
 

@@ -3,7 +3,7 @@ package LinkeTinderAplication.app.DAO.Company
 
 import LinkeTinderAplication.app.DataBase.SQLFactory.SQLInstanceCreator
 import LinkeTinderAplication.app.DataBase.SQLInstance
-import LinkeTinderAplication.app.Domain.Models.Company
+import LinkeTinderAplication.app.Model.Company
 
 class CompanyDAO implements ICompany{
 

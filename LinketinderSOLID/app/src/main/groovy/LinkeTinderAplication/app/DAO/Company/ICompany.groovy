@@ -1,6 +1,6 @@
 package LinkeTinderAplication.app.DAO.Company
 
-import LinkeTinderAplication.app.Domain.Models.Company
+import LinkeTinderAplication.app.Model.Company
 
 interface ICompany {
     void DeleteUsingEmail(String email)
