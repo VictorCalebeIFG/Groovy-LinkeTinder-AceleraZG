@@ -32,6 +32,8 @@ O projeto foi dividio em várias camadas:
 
 **View**: A camada view recebe o retorno da camada de controlle após uma operação usando os DAO's pela camada service e "renderiza" o retorno da camada de controle.
 
+**Model**: A camada model é responsável pelos modelos de negócio, como candidato e compania.
+
 ---
 # Banco de Dados
 
