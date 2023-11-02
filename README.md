@@ -20,6 +20,18 @@ Além disso, para cria a instância que executa os comandos SQL foi utilizado o 
 
 Outro padrão utilizado no banco de Dados foi o **Data Acces Object (DAO)**, que permitiu isolar as funcionalidades relacionadas a obtenção e gravação de dados.
 
+### Aplicação do padrão MVC:
+
+O projeto foi dividio em várias camadas:
+
+Aplicação: onde está o Main e o Loop do terminal
+
+Controller: É a camada que recebe as interações com a view. Essa camada receve inforamções da view e cria os objteos e os envia para camada service.
+
+Service: A camada serice é responsável por receber as requesições da camada controller e envialas para os "DAO"
+
+View: A camada view recebe o retorno da camada de controlle após uma operação usando os DAO's pela camada service e "renderiza" o retorno da camada de controle.
+
 ---
 # Banco de Dados
 
