@@ -18,6 +18,7 @@ class CompanyServlet extends BaseServlet{
 
         sendJsonResponse(resp,jsonData)
     }
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         JsonNode json = readJsonRequestBody(req)
         List<String> data = extractValuesFromJson(json)
