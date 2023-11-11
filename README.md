@@ -43,6 +43,8 @@ Primeiramente foi feito a configuração do projeto: Coloquei uma pasta WebApp n
 Depois disso configurei o tomcat na IDE do **InteliJ Community** usando esse vídeo:
 https://www.youtube.com/watch?v=iTzauISg5P4
 
+#### **Cadastro de cliente usando o postman**
+
 Aqui está um exemplo de Json para Cadastrar Candidato:
 ```json
 {
@@ -58,10 +60,31 @@ Aqui está um exemplo de Json para Cadastrar Candidato:
   "password": "password123"
 }
 ```
-
-**Candastro de cliente usando o postman**
-
 <img width="600" alt="image" src="https://github.com/VictorCalebeIFG/LinkeTinder/assets/84258178/29a0be67-54ab-44ba-9420-39f34ae20c26">
+
+#### **Cadastro de Empresa**
+
+```json
+{
+  "ID": "1",
+  "name": "CompanyName",
+  "cnpj": "12345678901234",
+  "email": "company@email.com",
+  "description": "Company Description",
+  "country": "Brazil",
+  "cep": "12345-678",
+  "password": "companyPassword123"
+}
+```
+<img width="518" alt="image" src="https://github.com/VictorCalebeIFG/LinkeTinder/assets/84258178/e2239335-6aff-4de9-9274-888fe16bdff9">
+
+
+#### **Ver Jobs por email**
+
+`http://localhost:8080/app/Job?email=doritos@email.com`
+
+<img width="379" alt="image" src="https://github.com/VictorCalebeIFG/LinkeTinder/assets/84258178/2f3e9910-e908-4cc0-ac8e-ac88ce1e8ec1">
+
 
 ---
 # Banco de Dados
