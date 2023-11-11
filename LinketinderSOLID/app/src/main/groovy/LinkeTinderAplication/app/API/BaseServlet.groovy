@@ -35,4 +35,10 @@ abstract class BaseServlet extends HttpServlet{
         ObjectMapper objectMapper = new ObjectMapper()
         return objectMapper.writeValueAsString(listOfLists)
     }
+
+    protected void sendJsonResponse(HttpServletResponse resp, String data){
+        resp.setContentType("application/json")
+        resp.setCharacterEncoding("UTF-8")
+        resp.getWriter().write(data)
+    }
 }
