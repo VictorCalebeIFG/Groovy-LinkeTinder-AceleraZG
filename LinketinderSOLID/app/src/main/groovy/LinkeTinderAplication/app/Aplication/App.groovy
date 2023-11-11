@@ -6,7 +6,7 @@ package LinkeTinderAplication.app.Aplication
 class App {
     static void main(String[] args) {
 
-        (new AplicationLoop()).runLoop()
+        //(new AplicationLoop()).runLoop()
 
     }
 }
