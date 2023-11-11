@@ -86,6 +86,17 @@ Aqui está um exemplo de Json para Cadastrar Candidato:
 
 <img width="379" alt="image" src="https://github.com/VictorCalebeIFG/LinkeTinder/assets/84258178/2f3e9910-e908-4cc0-ac8e-ac88ce1e8ec1">
 
+#### **Adicionar um Job**
+
+```json
+{
+  "email_company": "doritos@email.com",
+  "nome_vaga": "comedor de doritos",
+  "descricao_vaga": "precisamos de um comedor de doritos",
+  "local_vaga": "Brasil"
+}
+```
+<img width="520" alt="image" src="https://github.com/VictorCalebeIFG/LinkeTinder/assets/84258178/d788b35d-e7b7-4a98-a99f-5d163c89e040">
 
 ---
 # Banco de Dados
