@@ -34,6 +34,35 @@ O projeto foi dividio em várias camadas:
 
 **Model**: A camada model é responsável pelos modelos de negócio, como candidato e compania.
 
+
+### Criação da API:
+
+Primeiramente foi feito a configuração do projeto: Coloquei uma pasta WebApp no projeto para conseguir inicar a aplicação pelo tomcat.
+<img width="189" alt="image" src="https://github.com/VictorCalebeIFG/LinkeTinder/assets/84258178/e318ec2f-e6f6-4d2f-a32a-79518fe7303f">
+
+Depois disso configurei o tomcat na IDE do **InteliJ Community** usando esse vídeo:
+https://www.youtube.com/watch?v=iTzauISg5P4
+
+Aqui está um exemplo de Json para Cadastrar Candidato:
+```json
+{
+  "ID": "1",
+  "name": "John",
+  "lastName": "Doe",
+  "birthDate": "1990-01-01",
+  "email": "john.doe@email.com",
+  "cpf": "123456789",
+  "country": "USA",
+  "cep": "12345",
+  "description": "Some description",
+  "password": "password123"
+}
+```
+
+**Candastro de cliente usando o postman**
+
+<img width="600" alt="image" src="https://github.com/VictorCalebeIFG/LinkeTinder/assets/84258178/29a0be67-54ab-44ba-9420-39f34ae20c26">
+
 ---
 # Banco de Dados
 
