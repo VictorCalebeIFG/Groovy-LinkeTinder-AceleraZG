@@ -37,7 +37,7 @@ O projeto foi dividio em várias camadas:
 
 ### Criação da API:
 
-Primeiramente foi feito a configuração do projeto: Coloquei uma pasta WebApp no projeto para conseguir inicar a aplicação pelo tomcat.
+Primeiramente foi feito a configuração do projeto: Coloquei uma pasta WebApp no projeto para conseguir inicar a aplicação pelo tomcat. Além disso adicionei a biblioteca do jakarta às dependecias do Gradle.
 
 <img width="189" alt="image" src="https://github.com/VictorCalebeIFG/LinkeTinder/assets/84258178/e318ec2f-e6f6-4d2f-a32a-79518fe7303f">
 
